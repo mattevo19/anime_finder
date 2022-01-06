@@ -1,0 +1,1 @@
+'https://api.jikan.moe/v4/anime?q=one+piece&type=tv'//string for searching
