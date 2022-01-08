@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 function TopChar() {
-  const [topChar,setTopChar] = useState([]);
+  const [topChar,setTopChar] = useState([])
 
   useEffect(() => {
     fetch('https://api.jikan.moe/v4/top/characters?limit=10').then(r => r.json()).then(d=> setTopChar(d.data))
@@ -16,4 +16,4 @@ function TopChar() {
   )
 }
 
-export default TopChar;
+export default TopChar

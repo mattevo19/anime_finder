@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 function TopAninme() {
-  const [topAnime,setTopAnime] = useState([]);
+  const [topAnime,setTopAnime] = useState([])
 
   useEffect(() => {
     fetch('https://api.jikan.moe/v4/top/anime?limit=10').then(r => r.json()).then(d=> setTopAnime(d.data))
@@ -16,4 +16,4 @@ function TopAninme() {
   )
 }
 
-export default TopAninme;
+export default TopAninme

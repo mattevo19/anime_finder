@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 function TopManga() {
-  const [topManga,setTopManga] = useState([]);
+  const [topManga,setTopManga] = useState([])
 
   useEffect(() => {
     fetch('https://api.jikan.moe/v4/top/manga?limit=10').then(r => r.json()).then(d=> setTopManga(d.data))
@@ -16,4 +16,4 @@ function TopManga() {
   )
 }
 
-export default TopManga;
+export default TopManga
