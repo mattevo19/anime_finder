@@ -6,7 +6,7 @@ function SearchAnime() {
   const [animes, setAnime] = useState([])
   
   function hasSpace(s) {
-    return s.trim().replace(/ /g, '+')
+    return s.trim().replace(/\s+/g, '+')
   }
 
   const url = `https://api.jikan.moe/v4/anime?q=${hasSpace(search)}&type=tv&limit=10`
