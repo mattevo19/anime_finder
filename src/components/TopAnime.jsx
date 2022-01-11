@@ -4,8 +4,8 @@ function TopAninme() {
   const [topAnime, setTopAnime] = useState([])
 
   const GetTopAnime = async () => {
-    await fetch('https://api.jikan.moe/v4/top/anime?limit=5')
-      .then(res => res.json()).then(d=> setTopAnime(d.data))
+    await fetch('https://api.jikan.moe/v3/top/anime/1/bypopularity')
+      .then(res => res.json()).then(d=> setTopAnime(d.top.slice(0,10)))
   }
   useEffect(() => {
     GetTopAnime();
@@ -13,8 +13,10 @@ function TopAninme() {
 
   return (
     <div>
-      <h2>Top 5 Anime</h2>
-      {(topAnime != null) ? (topAnime.map((anime) => <a href={anime.url} key={anime.mal_id}>{anime.title}</a>)) : ''}
+      <h2>Top 10 Anime</h2>
+      <ol>
+        {(topAnime != null) ? (topAnime.map((anime) => <li  key={anime.mal_id}><a href={anime.url} key={anime.mal_id}>{anime.title}</a></li>)) : ''}
+      </ol>
     </div>
   )
 }

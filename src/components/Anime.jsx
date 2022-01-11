@@ -4,8 +4,10 @@ function Anime(props) {
   const { anime } = props
   return (
     <div className='card'>
-      {anime.title}
-      <img src={anime.images.jpg.image_url} alt={anime.title} />
+      <a href={anime.url} target='_blank' rel='noreferrer'>
+        <img src={anime.images.jpg.image_url} alt={anime.title} />
+        <h3>{anime.title}</h3>
+      </a>
     </div>
   )
 }
