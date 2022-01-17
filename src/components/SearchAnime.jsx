@@ -22,15 +22,16 @@ function SearchAnime() {
   }
 
   return (
-    <div>
-      <h2>Search Anime</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={search} onChange={e => setSearch(e.target.value)} />
-      </form>
-      <div className='card_grid'>
+    <main>
+      <div className='main-head'>
+        <form className='search-box' onSubmit={handleSubmit}>
+          <input type="search" placeholder='Search for an anime...' value={search} onChange={e => setSearch(e.target.value)} />
+        </form>
+      </div>
+      <div className='anime-list'>
         {animes.map((anime) => <Anime anime={anime} key={anime.mal_id} />)}
       </div>
-    </div>
+    </main>
   )
 }
 

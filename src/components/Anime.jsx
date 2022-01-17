@@ -3,12 +3,14 @@ import React from 'react'
 function Anime(props) {
   const { anime } = props
   return (
-    <div className='card'>
+    <article className='anime-card'>
       <a href={anime.url} target='_blank' rel='noreferrer'>
-        <img src={anime.images.jpg.image_url} alt={anime.title} />
+        <figure>
+          <img src={anime.images.jpg.image_url} alt={anime.title} />
+        </figure>
         <h3>{anime.title}</h3>
       </a>
-    </div>
+    </article>
   )
 }
 
