@@ -12,7 +12,7 @@ function SearchAnime() {
   const select = 'anime' // going to use to change between anime and manga search
   // order_by "mal_id" "title" "type" "rating" "start_date" "end_date" "episodes" "score" "scored_by" "rank" "popularity" "members" "favorites"
   // type "tv" "movie" "ova" "special" "ona" "music"
-  const url = `https://api.jikan.moe/v4/${select}?q=${hasSpace(search)}&order_by=popularity&type=tv`
+  const url = `https://api.jikan.moe/v4/${select}?q=${hasSpace(search)}&order_by=popularity`
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -22,13 +22,17 @@ function SearchAnime() {
   }
 
   return (
-    <main>
-      <div className='main-head'>
-        <form className='search-box' onSubmit={handleSubmit}>
-          <input type="search" placeholder='Search for an anime...' value={search} onChange={e => setSearch(e.target.value)} />
+    <main className='flex-1 px-6'>
+      <div>
+        <form className='flex justify-end' onSubmit={handleSubmit}>
+          <input type="search"
+            className='appearance-none w-full	max-w-sm p-4 rounded-full bg-black text-slate-300'
+            placeholder='Search for an anime...' 
+            value={search} 
+            onChange={e => setSearch(e.target.value)} />
         </form>
       </div>
-      <div className='anime-list'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-4'>
         {animes.map((anime) => <Anime anime={anime} key={anime.mal_id} />)}
       </div>
     </main>

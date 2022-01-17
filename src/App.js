@@ -9,12 +9,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="content-wrap flex">
-        <aside className="flex-initial max-w-xs">
+      <div className="flex">
+        <aside className="flex-1 max-w-xs">
           <TopAnime />
           <TopManga />
         </aside>
-          <SearchAnime />
+        <SearchAnime />
       </div>
     </div>
   )
