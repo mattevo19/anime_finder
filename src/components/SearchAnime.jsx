@@ -12,7 +12,7 @@ function SearchAnime() {
   const select = 'anime' // going to use to change between anime and manga search
   // order_by "mal_id" "title" "type" "rating" "start_date" "end_date" "episodes" "score" "scored_by" "rank" "popularity" "members" "favorites"
   // type "tv" "movie" "ova" "special" "ona" "music"
-  const url = `https://api.jikan.moe/v4/${select}?q=${hasSpace(search)}&order_by=popularity`
+  const url = `https://api.jikan.moe/v4/${select}?q=${hasSpace(search)}&order_by=mal_id`
 
   const handleSubmit = (e) => {
     e.preventDefault()
